@@ -1,0 +1,303 @@
+/*
+CSS de: Mega Sales pour les Dev <3
+Date: 03/03/2021
+Version 1.0
+*/
+
+/***********/
+/* GENERAL */
+/***********/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	color: #343434;
+	background: rgb(229,229,229);
+	background: linear-gradient(335deg, rgba(229,229,229,1) 0%, rgba(247,247,247,1) 100%);
+}
+
+.wrapper { /* Div qui contient les 3 parties principales */
+	min-height: 100vh;
+}
+
+/**********/
+/* HEADER */
+/**********/
+nav#burger {
+	display: flex;
+	justify-content: center ;
+}
+
+nav#burger ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	list-style: none;
+	width: 50%;
+	align-items: baseline;
+	margin-top: 40px;
+}
+
+nav#burger ul li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+nav#burger ul li a {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.4em;
+	font-weight: 300;
+	color: #343434;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+
+nav#burger ul li a:hover {
+	color: #ff9391;
+}
+
+nav#burger ul li a img {
+	height: 27px;
+	width: 27px;
+}
+
+nav#burger input[type="checkbox"] {
+	display: none;
+}
+
+nav#burger label {
+	padding: 10px;
+}
+
+.logo {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.4em;
+    letter-spacing: 0.15em;
+}
+
+/***********/
+/* CONTENT */
+/***********/
+main {
+	margin-top: 80px;
+}
+
+.container {
+	width: 100%;
+	padding: 0 15%;
+	display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.img-container {
+	width: 60%;
+}
+
+.container .img-container img {
+	width: 100%;
+ 	height: auto;
+ 	max-width: 700px;
+}
+
+.content {
+    width: 40%;
+    padding-top: 180px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.content h1 {
+	font-family: 'Archivo Black', sans-serif;
+	color: #ff9391;
+	font-size: 3em;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 0.9;
+	transform: scale(1,1.2); /* étire la typo verticalement */
+    transform-origin: bottom left; /* origine de la transformation étirement */
+}
+
+.content h2 {
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 2.3em;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-weight: 400;
+	letter-spacing: .15em;
+}
+
+.content p {
+	padding-bottom: 20px;
+}
+
+.content > p:nth-child(4) {
+	margin-bottom: 15px;
+}
+
+.jaune {
+	font-family: 'Archivo Black', sans-serif;
+	color: #ffdf78;
+	font-size: 1.5em;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+}
+
+.content a.button {
+	background-color: #fff;
+	border-radius: 35px;
+	text-decoration: none;
+	padding: 10px 25px;
+	box-shadow: 4px 3px 9px 0px rgb(0 0 0 / 20%);
+	font-weight: 700;
+    font-size: 1.4em;
+    color: #ff9391;
+    /*margin-left: 120px;*/
+    margin: 0 auto;
+    display: table;
+    transition: all .3s ease-in-out;
+}
+
+.content a.button:hover {
+	background-color: #ff9391;
+    color: #fff;
+    box-shadow: 4px 3px 9px 0px rgb(142 20 20 / 40%);
+}
+
+/**********/
+/* FOOTER */
+/**********/
+footer {
+	margin-bottom: 20px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+p.footer {
+	font-size: .8em;
+	color: #343434;
+	text-align: center;
+}
+
+/********************************/
+/* RESPONSIVE -  Medium Desktop */
+/********************************/
+@media screen and (max-width: 1440px) {
+	nav#burger ul {
+		width: 80%;
+	}
+	.container {
+		padding: 0 5%;
+	}
+	.content {
+		padding-top: 100px;
+	}
+}
+
+@media screen and (max-width: 1140px) {
+	.content {
+		padding-top: 20px;
+	}
+}
+
+/**************************/
+/* RESPONSIVE -  Tablette */
+/**************************/
+@media screen and (max-width: 768px) {
+	main {
+		margin-top: 30px;
+	}
+	.container {
+		width: 100%;
+		flex-direction: column;
+		padding: 0 50px;
+	}
+	.img-container {
+		width: 90%
+	}
+	.content {
+    	width: 100%;
+    	padding-top: 10px;
+		margin-left: 0;
+	}
+	nav#burger ul {
+		width: 100%;
+	}
+	.content h1, .content h2 {
+		text-align: center;
+	}
+	footer {
+		position: relative; /* ou unset => supprime une propriété css héritée */
+	}
+}
+
+/************************/
+/* RESPONSIVE -  Mobile */
+/************************/
+@media screen and (max-width: 380px) {
+	.container {
+		padding: 0 30px;
+	}
+	.img-container {
+	    width: 100%;
+	    margin-bottom: 20px;
+	}
+	.container img {
+   		margin-left: -15px;
+	}
+	nav#burger ul li a {
+		font-size: 1em;
+	}
+	.content p {
+		text-align: justify;
+	}
+}
+
+@media screen and (max-width: 640px) { /* Apparition du menu mobile */
+	main {
+    	margin-top: 80px;
+	}
+
+	nav#burger {
+		justify-content: left;
+		z-index: 5;
+		background: #ff9391;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		box-shadow: 0px 0px 6px rgba(0,0,0,.5);
+	}
+	nav#burger ul {
+		flex-direction: column; /* On passe d'un menu ligne à un menu colonne */
+	}
+	nav#burger ul li a:hover {
+	    color: #ffdf78;
+	}
+
+	/* Gestion de l'affichage du menu - le bouton qui fait apparaitre le menu */
+	nav#burger input[type="checkbox"]:not(:checked) ~ ul {
+		display: none;
+	}
+	nav#burger input[type="checkbox"]:checked ~ ul {
+		display: flex;
+	}
+
+	/* Gestion du symbole de la checkbox ou plutot du label de celle-ci */
+	nav#burger input[type="checkbox"] + label:before {
+		font-family: FontAwesome;
+		font-size: 30px;
+		color: #ffdf78;
+	}
+	nav#burger input[type="checkbox"]:not(:checked) + label:before {
+		content: "\f0c9"; /* symbole burger */
+	}
+	nav#burger input[type="checkbox"]:checked + label:before {
+		content: "\f00d"; /* symbole croix */
+	}
+}
